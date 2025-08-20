@@ -1,0 +1,105 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+}
+
+/* Cabeçalho */
+header {
+  background: #66ccff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+/* Logo */
+.logo {
+  background: blue;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Menu */
+nav a {
+  background: #0066ff;
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  background: #0044aa;
+}
+
+/* Seção sobre nós */
+.sobre {
+  background: #ddd;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+/* Planos */
+.planos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px;
+}
+
+.plano {
+  background: #66ccff;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Rodapé */
+footer {
+  background: #0066ff;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+footer a {
+  background: #ff66cc;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+footer a:nth-child(3) {
+  background: #66ccff; /* endereço no maps */
+  color: black;
+}
+
+/* Mapa */
+.mapa {
+  margin: 30px;
+  text-align: center;
+}
+
+.mapa h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
