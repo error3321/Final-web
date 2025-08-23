@@ -59,12 +59,27 @@ window.onload = function () {
     updateIndicators(currentIndicator, targetIndicator);
   });
 
-  // Auto slide (mover para o próximo slide automaticamente a cada 5 segundos)
-  let autoSlide = setInterval(() => nextButton.click(), 5000);
+// Auto slide (mover para o próximo slide automaticamente a cada 5 segundos)
+  let autoSlide = null;
+  let isAutoSlideRunning = false;
 
+  function startAutoSlide() {
+    if (!isAutoSlideRunning) {
+      autoSlide = setInterval(() => nextButton.click(), 5000);
+      isAutoSlideRunning = true;
+    }
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlide);
+    isAutoSlideRunning = false;
+  }
+
+  // Iniciar auto-slide depois de tudo carregar
+  startAutoSlide();
+
+  // Pausar ao passar o mouse sobre o carrossel
   const carousel = document.querySelector('.carousel');
-  carousel.addEventListener('mouseover', () => clearInterval(autoSlide)); // Pausar o auto-slide quando o mouse passar sobre o carrossel
-  carousel.addEventListener('mouseout', () => {
-    autoSlide = setInterval(() => nextButton.click(), 5000); // Reiniciar o auto-slide
-  });
-};
+  carousel.addEventListener('mouseenter', stopAutoSlide);
+  carousel.addEventListener('mouseleave', startAutoSlide);
+}
